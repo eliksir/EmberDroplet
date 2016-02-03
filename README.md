@@ -52,7 +52,7 @@ In addition to the actions, the mixin also has the following computed properties
 In order to begin using EmberDroplet, you need to construct an `Ember.Component` using the `Droplet` mixin:
 
 ```javascript
-App.XDropletComponent = Ember.Component.extend(Droplet, {
+App.XDropletComponent = Ember.Component.extend(Droplet.Droplet, {
     url: location.origin + '/upload'
 });
 ```
@@ -81,7 +81,7 @@ options object:
  * `requestPostData` &ndash; Additional POST data to be sent;
 
 ```javascript
-  App.XDropletComponent = Ember.Component.extend(Droplet, {
+  App.XDropletComponent = Ember.Component.extend(Droplet.Droplet, {
     options: {
       requestMethod: Droplet.METHOD.PATCH
       // ...
@@ -97,7 +97,7 @@ you can instantiate other provided `Ember.Component` objects for additional func
 To attach hooks, define them in the hooks object:
 
 ```javascript
-  App.XDropletComponent = Ember.Component.extend(Droplet, {
+  App.XDropletComponent = Ember.Component.extend(Droplet.Droplet, {
     hooks: {
       didUpload: function() {
         console.log("did an upload");

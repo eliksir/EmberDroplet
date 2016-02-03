@@ -232,7 +232,15 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
    * @author Adam Timberlake
    * @see https://github.com/Wildhoney/EmberDroplet
    */
-  $window.Droplet = Mixin.create({
+  $window.Droplet = {};
+
+  /**
+   * @module Droplet
+   * @submodule Droplet
+   * @author Adam Timberlake
+   * @see https://github.com/Wildhoney/EmberDroplet
+   */
+  $window.Droplet.Droplet = Mixin.create({
 
     /**
      * @property url

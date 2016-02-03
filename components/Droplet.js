@@ -219,7 +219,15 @@
      * @author Adam Timberlake
      * @see https://github.com/Wildhoney/EmberDroplet
      */
-    $window.Droplet = Mixin.create({
+    $window.Droplet = {};
+
+    /**
+     * @module Droplet
+     * @submodule Droplet
+     * @author Adam Timberlake
+     * @see https://github.com/Wildhoney/EmberDroplet
+     */
+    $window.Droplet.Droplet = Mixin.create({
 
         /**
          * @property url
