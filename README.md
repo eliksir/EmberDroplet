@@ -97,6 +97,7 @@ options object:
  * `useArray` &ndash; Changes the `FormData` name of the `file` to either `file[]` or `file`;
  * `mimeTypes` &ndash; List of valid MIME types &ndash; can also be changed with `mimeTypes` method;
  * `requestHeaders` &ndash; Additional request headers to be sent;
+ * `requestOptions` &ndash; Additional request options;
  * `requestPostData` &ndash; Additional POST data to be sent;
 
 ```javascript

@@ -192,6 +192,12 @@
         requestHeaders: {},
 
         /**
+         * @property requestOptions
+         * @type {Object}
+         */
+        requestOptions: {},
+
+        /**
          * @property requestPostData
          * @type {Object}
          */
@@ -488,6 +494,7 @@
             const method     = get(this, 'options.requestMethod') || 'POST';
             const data       = this.getFormData();
             const headers    = $Ember.merge({}, this.get('options.requestHeaders'));
+            const options    = $Ember.merge({}, this.get('options.requestOptions'));
 
             if (get(this, 'options.includeXFileSize')) {
                 headers['X-File-Size'] = this.get('requestSize');
@@ -506,8 +513,9 @@
                     set(this, 'lastRequest', xhr);
                     return xhr;
 
-                }
+                },
 
+                ...options
             });
 
             set(this, 'lastResolver', request);
