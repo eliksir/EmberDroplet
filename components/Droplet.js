@@ -271,7 +271,7 @@
          * @return {void}
          */
         init() {
-            
+
             set(this, 'files', []);
 
             const hooks = $Ember.merge({}, this.get('hooks'));
@@ -298,7 +298,7 @@
         willDestroy() {
 
             this._super();
-            
+
             const lastRequest = this.get('lastRequest');
 
             if (lastRequest) {
@@ -465,7 +465,7 @@
             });
 
             return formData;
-            
+
         },
 
         /**
@@ -502,7 +502,10 @@
                 headers['X-File-Size'] = this.get('requestSize');
             }
 
-            const request = $Ember.$.ajax({ url, method, headers, data, processData: false, contentType: false,
+            const owner = $Ember.getOwner(this);
+            const adapter = owner.lookup('adapter:application');
+
+            const request = adapter.ajax(url, method, { headers, data, processData: false, contentType: false,
 
                 /**
                  * @method xhr
@@ -913,7 +916,7 @@
             this.DropletEventBus && this.DropletEventBus.publish(
                 EVENT_NAME, this.get('ctx'), ...fromArray(models));
         }
-        
+
     });
 
     /**

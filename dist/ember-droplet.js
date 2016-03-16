@@ -547,7 +547,10 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
         headers['X-File-Size'] = this.get('requestSize');
       }
 
-      var request = $Ember.$.ajax({ url: url, method: method, headers: headers, data: data, processData: false, contentType: false,
+      var owner = $Ember.getOwner(this);
+      var adapter = owner.lookup('adapter:application');
+
+      var request = adapter.ajax(url, method, { headers: headers, data: data, processData: false, contentType: false,
 
         /**
          * @method xhr
