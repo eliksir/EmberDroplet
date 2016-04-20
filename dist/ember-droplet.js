@@ -86,10 +86,11 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
     /**
      * @method initialize
+     * @param {Object} container
      * @param {Object} application
      * @return {void}
      */
-    initialize: function initialize(application) {
+    initialize: function initialize(container, application) {
 
       var eventBus = EventBus.create();
 
@@ -308,8 +309,6 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
     willDestroy: function willDestroy() {
 
       this._super();
-
-      this.DropletEventBus && this.DropletEventBus.unsubscribe(EVENT_NAME, this);
 
       var lastRequest = this.get('lastRequest');
 
