@@ -86,11 +86,10 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
     /**
      * @method initialize
-     * @param {Object} container
      * @param {Object} application
      * @return {void}
      */
-    initialize: function initialize(container, application) {
+    initialize: function initialize(application) {
 
       var eventBus = EventBus.create();
 
