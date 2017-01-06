@@ -247,9 +247,9 @@
 
         /**
          * @property files
-         * @type {Array}
+         * @type {Ember.Array}
          */
-        files: [],
+        files: $Ember.A(),
 
         /**
          * @property statusTypes
@@ -263,7 +263,7 @@
          */
         init() {
             
-            set(this, 'files', []);
+            set(this, 'files', $Ember.A());
 
             const hooks = $Ember.merge({}, this.get('hooks'));
             set(this, 'hooks', hooks);
